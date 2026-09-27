@@ -13,10 +13,162 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #1d1e20;
-    color: #202020;
-    overflow: hidden;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top,
+            #202020 0%,
+            #101010 45%,
+            #080808 100%
+        );
+
+    color: #e9e5dc;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090909;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background: rgba(8, 8, 8, 0.88);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.07);
+
+    z-index: 1000;
+}
+
+.brand {
+    border: none;
+    background: transparent;
+
+    color: #eee9df;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.top-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.04);
+
+    color: #eee;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.1);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   HOME
+========================================= */
+
+.home-screen {
+    min-height: 100vh;
+
+    padding:
+        120px
+        30px
+        80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    width: min(1100px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 420px)
+        1fr;
+
+    gap: 80px;
+
+    align-items: center;
 }
 
 
@@ -24,106 +176,189 @@ body {
    COVER
 ========================================= */
 
-.cover {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
+.cover-container {
+    width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+}
 
-    background: #050505;
-    overflow: hidden;
+.cover-container::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    bottom: -25px;
+
+    height: 40px;
+
+    background: rgba(0,0,0,0.7);
+
+    filter: blur(25px);
+
+    z-index: -1;
 }
 
 .cover-image {
-    position: absolute;
-    inset: 0;
-}
-
-.cover-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.cover-overlay {
-    position: absolute;
-    inset: 0;
+    display: block;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.9),
-            rgba(0,0,0,.45),
-            rgba(0,0,0,.85)
-        );
-}
-
-.cover-content {
-    position: relative;
-    z-index: 2;
-
-    width: min(900px, 90%);
-    text-align: center;
-
-    color: white;
-}
-
-.cover-small {
-    letter-spacing: 5px;
-    font-size: 12px;
-    opacity: .7;
-    margin-bottom: 25px;
-}
-
-.cover h1 {
-    font-family: Georgia, serif;
-    font-weight: normal;
-
-    font-size: clamp(45px, 7vw, 90px);
-    line-height: .95;
-
-    text-transform: uppercase;
-}
-
-.cover-subtitle {
-    margin-top: 30px;
-
-    font-size: 18px;
-    line-height: 1.7;
-
-    color: #ddd;
-}
-
-.start-button {
-    margin-top: 40px;
-
-    padding: 15px 32px;
-
-    border: 1px solid rgba(255,255,255,.4);
     border-radius: 4px;
 
-    background: rgba(255,255,255,.08);
-    color: white;
+    box-shadow:
+        0 35px 70px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(255,255,255,0.08);
+}
 
-    font-size: 15px;
-    letter-spacing: 1px;
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero-info {
+    max-width: 560px;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #999;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 78px);
+
+    line-height: 0.98;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: #f3eee4;
+}
+
+.subtitle {
+    margin-top: 22px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #aaa49b;
+}
+
+.subtitle em {
+    color: #ddd7ca;
+}
+
+.divider {
+    width: 65px;
+
+    height: 1px;
+
+    background: #777;
+
+    margin: 28px 0;
+}
+
+.intro {
+    max-width: 470px;
+
+    color: #aaa69e;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button,
+.secondary-button {
+
+    border: none;
 
     cursor: pointer;
 
-    transition: .25s;
+    font-family: Arial, sans-serif;
+
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
 }
 
-.start-button span {
+.primary-button {
+    margin-top: 32px;
+
+    padding:
+        15px
+        24px;
+
+    background: #eee9df;
+
+    color: #111;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    background: white;
+}
+
+.primary-button span {
     margin-right: 8px;
 }
 
-.start-button:hover {
-    background: white;
-    color: black;
-    transform: translateY(-2px);
+.secondary-button {
+    margin-top: 12px;
+
+    padding:
+        12px
+        20px;
+
+    background: transparent;
+
+    color: #aaa;
+
+    border:
+        1px solid #444;
+
+    border-radius: 3px;
+}
+
+.secondary-button:hover {
+    color: white;
+
+    border-color: #777;
+}
+
+.chapter-count {
+    margin-top: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #666;
+
+    letter-spacing: 2px;
 }
 
 
@@ -132,123 +367,203 @@ body {
 ========================================= */
 
 .reader {
-    position: fixed;
-    inset: 0;
+    min-height: 100vh;
 
-    display: none;
-    flex-direction: column;
-
-    background: #252629;
+    padding:
+        105px
+        20px
+        100px;
 }
 
-.reader.active {
-    display: flex;
+.reader-wrapper {
+    width: min(850px, 100%);
+
+    margin: auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f5ee,
+            #eee9df
+        );
+
+    color: #242321;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.55);
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    padding-bottom: 50px;
 }
 
 
 /* =========================================
-   TOOLBAR
+   CHAPTER HEADER
 ========================================= */
 
-.toolbar {
-    height: 62px;
-    flex-shrink: 0;
+.chapter-top {
+    padding:
+        70px
+        70px
+        30px;
+
+    text-align: center;
+}
+
+.chapter-number {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #777;
+
+    margin-bottom: 14px;
+}
+
+.chapter-top h2 {
+    font-size: clamp(28px, 5vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #1f1e1b;
+}
+
+
+/* =========================================
+   CHAPTER IMAGE
+========================================= */
+
+.chapter-image-container {
+    width: 100%;
+
+    padding:
+        0
+        50px
+        40px;
+}
+
+.chapter-image {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+.story-content {
+    padding:
+        0
+        85px;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    letter-spacing: 0.1px;
+}
+
+.story-content p {
+    margin-bottom: 25px;
+}
+
+.story-content .date {
+    text-align: center;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+}
+
+.story-content .quote {
+    margin:
+        35px
+        15px;
+
+    padding-left: 25px;
+
+    border-left:
+        2px solid #999;
+
+    font-style: italic;
+
+    color: #555;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.chapter-navigation {
+
+    padding:
+        55px
+        70px
+        20px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 20px;
-
-    background: #17181a;
-    color: #ddd;
-
-    border-bottom: 1px solid #333;
-
-    font-family: Arial, sans-serif;
+    gap: 10px;
 }
 
-.toolbar-left,
-.toolbar-center,
-.toolbar-right {
-    display: flex;
-    align-items: center;
-}
+.nav-button,
+.chapter-list-button {
 
-.toolbar-left {
-    gap: 18px;
-}
-
-.toolbar-center {
-    gap: 12px;
-}
-
-.toolbar-right {
-    gap: 5px;
-}
-
-.tool-button {
-    min-width: 36px;
-    height: 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 0;
-    border-radius: 4px;
+    border:
+        1px solid #c9c4ba;
 
     background: transparent;
-    color: #ccc;
+
+    color: #292825;
+
+    padding:
+        12px
+        20px;
+
+    border-radius: 3px;
 
     cursor: pointer;
 
-    font-size: 18px;
+    font-family: Arial, sans-serif;
 
-    transition: .2s;
+    transition: 0.2s;
 }
 
-.tool-button:hover {
-    background: #333538;
+.nav-button:hover,
+.chapter-list-button:hover {
+    background: #292825;
+
     color: white;
 }
 
-.book-title {
-    display: flex;
-    flex-direction: column;
+.nav-button:disabled {
+    opacity: 0.3;
 
-    line-height: 1.2;
-}
-
-.book-title strong {
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.book-title small {
-    margin-top: 3px;
-    color: #777;
-    font-size: 10px;
-}
-
-.page-info {
-    min-width: 75px;
-    text-align: center;
-
-    color: #aaa;
-
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-}
-
-#zoomValue {
-    width: 42px;
-
-    text-align: center;
-
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: #999;
+    cursor: not-allowed;
 }
 
 
@@ -256,559 +571,384 @@ body {
    PROGRESS
 ========================================= */
 
-.progress-container {
+.reader-progress {
     height: 2px;
-    background: #333;
-    flex-shrink: 0;
+
+    background: #d3cec3;
+
+    margin:
+        15px
+        70px
+        0;
 }
 
-#progressBar {
+.progress-bar {
+    height: 100%;
+
     width: 0%;
-    height: 100%;
-    background: #aaa;
 
-    transition: width .3s;
+    background: #333;
+
+    transition: width 0.4s;
 }
 
-
-/* =========================================
-   READER AREA
-========================================= */
-
-.reader-area {
-    position: relative;
-
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-
-    min-height: 0;
-}
-
-
-/* =========================================
-   BOOK VIEWPORT
-========================================= */
-
-.book-viewport {
-    flex: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-
-    padding: 30px;
-}
-
-.book {
-    position: relative;
-
-    width: min(850px, 90vw);
-    height: min(82vh, 900px);
-
-    transition: transform .25s;
-}
-
-
-/* =========================================
-   PAGES
-========================================= */
-
-.book-page {
-    position: absolute;
-    inset: 0;
-
-    display: none;
-
-    background: #fff;
-
-    border-radius: 2px;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.4),
-        0 2px 5px rgba(0,0,0,.2);
-
-    overflow: hidden;
-}
-
-.book-page.active {
-    display: block;
-}
-
-.page-content {
-    width: 100%;
-    height: 100%;
-
-    padding: 65px 75px;
-
-    overflow-y: auto;
-
-    scrollbar-width: thin;
-}
-
-.page-content::-webkit-scrollbar {
-    width: 5px;
-}
-
-.page-content::-webkit-scrollbar-thumb {
-    background: #bbb;
-}
-
-
-/* =========================================
-   STORY TYPOGRAPHY
-========================================= */
-
-.page-content p {
-    margin-bottom: 20px;
-
-    font-size: 18px;
-    line-height: 1.8;
-
-    color: #292929;
-}
-
-.page-content h2 {
-    margin-bottom: 18px;
-
-    font-family: Georgia, serif;
-    font-weight: normal;
-
-    font-size: 31px;
-    line-height: 1.15;
-
-    letter-spacing: 1px;
-}
-
-.date {
-    margin-bottom: 45px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    color: #999;
-    text-transform: uppercase;
-}
-
-.emphasis {
-    font-size: 21px !important;
-    line-height: 1.6 !important;
-
-    margin-top: 30px;
-    margin-bottom: 30px !important;
-
-    color: #111 !important;
-}
-
-blockquote {
-    margin: 30px 0;
-    padding: 15px 25px;
-
-    border-left: 3px solid #333;
-
-    font-size: 21px;
-    line-height: 1.6;
-
-    font-style: italic;
-
-    color: #333;
-}
-
-.final-line {
-    margin-top: 50px;
-
+.progress-text {
     text-align: center;
 
-    font-size: 25px !important;
-    font-style: italic;
-}
-
-
-/* =========================================
-   IMAGE ATTACHMENTS
-========================================= */
-
-.story-image {
-    margin: 45px 0 25px;
-
-    text-align: center;
-}
-
-.story-image img {
-    display: block;
-
-    width: 100%;
-    max-height: 470px;
-
-    object-fit: contain;
-
-    border-radius: 2px;
-
-    background: #eee;
-}
-
-.story-image figcaption {
     margin-top: 12px;
 
     font-family: Arial, sans-serif;
 
-    font-size: 11px;
-    letter-spacing: .5px;
+    font-size: 10px;
+
+    letter-spacing: 2px;
 
     color: #888;
-
-    font-style: italic;
-}
-
-.final-image img {
-    max-height: 400px;
 }
 
 
 /* =========================================
-   CHAPTER DIVIDER
+   SIDEBAR
 ========================================= */
 
-.chapter-opening {
-    height: 100%;
+.chapter-sidebar {
 
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.chapter-opening .chapter-number {
-    margin-bottom: 25px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-    letter-spacing: 5px;
-
-    color: #999;
-}
-
-.chapter-opening h1 {
-    max-width: 700px;
-
-    font-size: 45px;
-    font-weight: normal;
-
-    line-height: 1.15;
-}
-
-.chapter-opening .opening-date {
-    margin-top: 30px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    color: #aaa;
-}
-
-
-/* =========================================
-   IMAGE PAGE
-========================================= */
-
-.image-page {
-    padding: 35px;
-}
-
-.image-page-inner {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.image-page img {
-    max-width: 100%;
-    max-height: 78%;
-
-    object-fit: contain;
-}
-
-.image-page-caption {
-    margin-top: 20px;
-
-    font-family: Arial, sans-serif;
-
-    color: #888;
-    font-size: 12px;
-    font-style: italic;
-}
-
-
-/* =========================================
-   READER NAVIGATION
-========================================= */
-
-.reader-navigation {
-    height: 58px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 40px;
-
-    font-family: Arial, sans-serif;
-}
-
-.reader-navigation button {
-    min-width: 110px;
-
-    padding: 9px 16px;
-
-    border: 1px solid #444;
-    border-radius: 4px;
-
-    background: #2e3033;
-    color: #ccc;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.reader-navigation button:hover {
-    background: #444;
-    color: white;
-}
-
-.reader-navigation button:disabled {
-    opacity: .3;
-    cursor: default;
-}
-
-.reader-status {
-    min-width: 100px;
-
-    text-align: center;
-
-    color: #888;
-
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   CONTENTS BUTTON
-========================================= */
-
-.contents-button {
-    position: absolute;
-
-    top: 15px;
-    left: 18px;
-
-    z-index: 20;
-
-    padding: 8px 13px;
-
-    border: 1px solid #444;
-    border-radius: 4px;
-
-    background: #202124;
-    color: #aaa;
-
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-
-    cursor: pointer;
-}
-
-.contents-button:hover {
-    color: white;
-}
-
-
-/* =========================================
-   CHAPTER MENU
-========================================= */
-
-.chapter-menu {
-    position: absolute;
+    position: fixed;
 
     top: 0;
     left: 0;
 
-    z-index: 100;
+    width: min(380px, 90vw);
 
-    width: 330px;
-    height: 100%;
+    height: 100vh;
 
-    background: #191a1c;
+    background: #111;
 
-    color: #ccc;
+    border-right:
+        1px solid #292929;
 
-    box-shadow: 15px 0 40px rgba(0,0,0,.4);
+    z-index: 2000;
 
-    transform: translateX(-105%);
+    transform: translateX(-100%);
 
-    transition: transform .3s;
+    transition:
+        transform 0.35s ease;
 
-    font-family: Arial, sans-serif;
+    overflow-y: auto;
 }
 
-.chapter-menu.open {
+.chapter-sidebar.open {
     transform: translateX(0);
 }
 
-.menu-header {
-    height: 62px;
+.sidebar-header {
+    position: sticky;
+
+    top: 0;
+
+    padding:
+        25px;
+
+    background: rgba(17,17,17,0.96);
+
+    backdrop-filter: blur(15px);
 
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
 
-    padding: 0 20px;
+    align-items: center;
 
-    border-bottom: 1px solid #333;
+    border-bottom:
+        1px solid #292929;
 }
 
-.menu-header strong {
-    font-size: 14px;
+.sidebar-label {
+    font-family: Arial, sans-serif;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
 }
 
-#closeMenu {
-    border: 0;
-    background: transparent;
-
-    color: #aaa;
+.sidebar-header h3 {
+    margin-top: 5px;
 
     font-size: 25px;
 
+    font-weight: 400;
+}
+
+.close-button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 1px solid #333;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
     cursor: pointer;
 }
 
+.chapter-list {
+    padding: 15px;
+}
+
 .chapter-item {
-    display: block;
 
     width: 100%;
 
-    padding: 16px 20px;
+    text-align: left;
 
-    border: 0;
-    border-bottom: 1px solid #292a2c;
+    padding: 18px;
+
+    margin-bottom: 5px;
+
+    border: none;
+
+    border-radius: 4px;
 
     background: transparent;
 
     color: #aaa;
 
-    text-align: left;
-
     cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .chapter-item:hover {
-    background: #252629;
+    background: #1c1c1c;
+
     color: white;
 }
 
 .chapter-item.active {
-    background: #303134;
+    background: #252525;
+
     color: white;
 }
 
-.chapter-item small {
+.chapter-item-number {
     display: block;
 
-    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
 
     color: #666;
 
-    font-size: 9px;
-    letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
-.chapter-item strong {
-    font-family: Georgia, serif;
+.chapter-item-title {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.65);
+
+    z-index: 1500;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.overlay.active {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings-panel {
+
+    position: fixed;
+
+    right: 20px;
+
+    top: 75px;
+
+    width: 300px;
+
+    background: #161616;
+
+    border:
+        1px solid #303030;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    z-index: 3000;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.5);
+
+    display: none;
+}
+
+.settings-panel.open {
+    display: block;
+}
+
+.settings-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+.setting-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
-    font-weight: normal;
+}
+
+.font-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.font-controls button {
+
+    border:
+        1px solid #333;
+
+    background: #222;
+
+    color: white;
+
+    padding: 8px 10px;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+}
+
+#fontSizeValue {
+    min-width: 45px;
+
+    text-align: center;
 }
 
 
 /* =========================================
-   LIGHT MODE
+   TABLET
 ========================================= */
 
-body.light-reader {
-    background: #d9d9d9;
-}
+@media (max-width: 800px) {
 
-body.light-reader .reader {
-    background: #e5e5e5;
-}
+    .hero {
 
-body.light-reader .toolbar {
-    background: #f7f7f7;
-    color: #333;
+        grid-template-columns: 1fr;
 
-    border-bottom-color: #ccc;
-}
+        gap: 45px;
 
-body.light-reader .tool-button {
-    color: #555;
-}
+        max-width: 550px;
+    }
 
-body.light-reader .tool-button:hover {
-    background: #ddd;
-    color: #111;
-}
+    .cover-container {
 
-body.light-reader .contents-button {
-    background: #fff;
-    color: #555;
-    border-color: #ccc;
-}
+        max-width: 330px;
 
-body.light-reader .reader-navigation button {
-    background: #fff;
-    color: #555;
-    border-color: #ccc;
-}
+        margin: auto;
+    }
 
+    .hero-info {
+        text-align: center;
 
-/* =========================================
-   ZOOM
-========================================= */
+        margin: auto;
+    }
 
-.book.zoom-90 {
-    transform: scale(.9);
-}
+    .divider {
+        margin:
+            25px
+            auto;
+    }
 
-.book.zoom-100 {
-    transform: scale(1);
-}
+    .intro {
+        margin: auto;
+    }
 
-.book.zoom-110 {
-    transform: scale(1.1);
-}
+    .chapter-top {
 
-.book.zoom-120 {
-    transform: scale(1.2);
+        padding:
+            50px
+            35px
+            25px;
+    }
+
+    .chapter-image-container {
+
+        padding:
+            0
+            25px
+            30px;
+    }
+
+    .story-content {
+
+        padding:
+            0
+            35px;
+
+        font-size: 18px;
+
+        line-height: 1.9;
+    }
+
+    .chapter-navigation {
+
+        padding:
+            45px
+            25px
+            15px;
+    }
+
 }
 
 
@@ -816,116 +956,156 @@ body.light-reader .reader-navigation button {
    MOBILE
 ========================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 550px) {
 
-    .toolbar {
-        height: 55px;
-        padding: 0 8px;
+    .topbar {
+
+        height: 56px;
+
+        padding:
+            0
+            15px;
     }
 
-    .book-title {
-        display: none;
+    .brand {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
     }
 
-    .toolbar-left span {
-        display: none;
+    .icon-btn {
+
+        width: 36px;
+        height: 36px;
     }
 
-    .toolbar-right {
-        gap: 0;
+    .home-screen {
+
+        padding:
+            90px
+            18px
+            60px;
     }
 
-    #zoomValue {
-        display: none;
+    .hero h1 {
+
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
     }
 
-    .book-viewport {
-        padding: 12px 8px;
-    }
+    .subtitle {
 
-    .book {
-        width: 94vw;
-        height: 80vh;
-    }
-
-    .page-content {
-        padding: 38px 28px;
-    }
-
-    .page-content p {
         font-size: 16px;
-        line-height: 1.75;
     }
 
-    .page-content h2 {
-        font-size: 25px;
-    }
+    .intro {
 
-    blockquote {
-        font-size: 18px;
-        padding-left: 18px;
-    }
-
-    .emphasis {
-        font-size: 19px !important;
-    }
-
-    .reader-navigation {
-        height: 55px;
-        gap: 15px;
-    }
-
-    .reader-navigation button {
-        min-width: 90px;
-        font-size: 11px;
-    }
-
-    .reader-status {
-        min-width: 70px;
-    }
-
-    .chapter-menu {
-        width: 85vw;
-    }
-
-    .chapter-opening h1 {
-        font-size: 32px;
-    }
-
-    .story-image img {
-        max-height: 350px;
-    }
-}
-
-
-/* =========================================
-   VERY SMALL MOBILE
-========================================= */
-
-@media (max-width: 430px) {
-
-    .page-content {
-        padding: 30px 22px;
-    }
-
-    .page-content p {
         font-size: 15px;
     }
 
-    .toolbar-center {
-        gap: 3px;
+    .reader {
+
+        padding:
+            76px
+            8px
+            60px;
     }
 
-    .tool-button {
-        min-width: 32px;
+    .reader-wrapper {
+
+        border-radius: 3px;
     }
 
-    .reader-navigation {
-        gap: 8px;
+    .chapter-top {
+
+        padding:
+            42px
+            20px
+            22px;
     }
 
-    .reader-navigation button {
-        min-width: 80px;
-        padding: 8px;
+    .chapter-top h2 {
+
+        font-size: 29px;
+    }
+
+    .chapter-image-container {
+
+        padding:
+            0
+            12px
+            25px;
+    }
+
+    .story-content {
+
+        padding:
+            0
+            23px;
+
+        font-size: 17px;
+
+        line-height: 1.85;
+    }
+
+    .story-content p {
+
+        margin-bottom: 22px;
+    }
+
+    .story-content .quote {
+
+        margin:
+            30px
+            0;
+
+        padding-left: 18px;
+    }
+
+    .chapter-navigation {
+
+        padding:
+            40px
+            15px
+            10px;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .chapter-list-button {
+
+        grid-column:
+            1 / -1;
+
+        order: -1;
+    }
+
+    .nav-button {
+
+        padding:
+            12px
+            8px;
+    }
+
+    .reader-progress {
+
+        margin:
+            15px
+            20px
+            0;
+    }
+
+    .settings-panel {
+
+        right: 10px;
+        left: 10px;
+
+        width: auto;
     }
 }

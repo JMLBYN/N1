@@ -2,109 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>The Part I Never Told You</title>
+
+    <meta
+        name="description"
+        content="The Part I Never Told You — A story inspired by memories that never left."
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================================
-     COVER
-================================ -->
+    <!-- =========================
+         TOP NAVIGATION
+    ========================== -->
 
-<section id="cover" class="cover">
+    <header class="topbar">
 
-    <div class="cover-image">
-        <img src="cover.jpg" alt="The Part I Never Told You">
-    </div>
-
-    <div class="cover-overlay"></div>
-
-    <div class="cover-content">
-
-        <p class="cover-small">A STORY INSPIRED BY MEMORIES</p>
-
-        <h1>The part I<br>never told you</h1>
-
-        <p class="cover-subtitle">
-            A story inspired by<br>
-            memories that never left.
-        </p>
-
-        <button id="startReading" class="start-button">
-            <span>▶</span>
-            Start Reading
+        <button class="brand" id="homeButton">
+            THE PART I NEVER TOLD YOU
         </button>
 
-    </div>
+        <div class="top-actions">
 
-</section>
-
-
-<!-- ================================
-     READER
-================================ -->
-
-<main id="reader" class="reader">
-
-    <!-- TOP TOOLBAR -->
-
-    <header class="toolbar">
-
-        <div class="toolbar-left">
-
-            <button id="backToCover" class="tool-button">
-                ← <span>Cover</span>
+            <button
+                class="icon-btn"
+                id="contentsButton"
+                title="Chapters"
+            >
+                ☰
             </button>
 
-            <div class="book-title">
-                <strong>The part I never told you</strong>
-                <small>Digital Edition</small>
-            </div>
-
-        </div>
-
-
-        <div class="toolbar-center">
-
-            <button id="previousPage" class="tool-button">
-                ‹
-            </button>
-
-            <div class="page-info">
-                <span id="pageNumber">1</span>
-                <span>/</span>
-                <span id="totalPages">1</span>
-            </div>
-
-            <button id="nextPage" class="tool-button">
-                ›
-            </button>
-
-        </div>
-
-
-        <div class="toolbar-right">
-
-            <button id="zoomOut" class="tool-button">
-                −
-            </button>
-
-            <span id="zoomValue">100%</span>
-
-            <button id="zoomIn" class="tool-button">
-                +
-            </button>
-
-            <button id="viewMode" class="tool-button">
-                ⬚
-            </button>
-
-            <button id="themeToggle" class="tool-button">
-                ☾
+            <button
+                class="icon-btn"
+                id="settingsButton"
+                title="Reading settings"
+            >
+                Aa
             </button>
 
         </div>
@@ -112,1813 +53,290 @@
     </header>
 
 
-    <!-- PROGRESS -->
+    <!-- =========================
+         LANDING / COVER
+    ========================== -->
 
-    <div class="progress-container">
-        <div id="progressBar"></div>
-    </div>
+    <main id="homeScreen" class="home-screen">
+
+        <section class="hero">
+
+            <div class="cover-container">
+
+                <img
+                    src="cover.jpg"
+                    alt="The Part I Never Told You cover"
+                    class="cover-image"
+                >
+
+            </div>
 
 
-    <!-- CHAPTER MENU -->
+            <div class="hero-info">
 
-    <aside id="chapterMenu" class="chapter-menu">
+                <p class="eyebrow">
+                    AN ORIGINAL STORY
+                </p>
 
-        <div class="menu-header">
-            <strong>Contents</strong>
+                <h1>
+                    The Part I Never Told You
+                </h1>
 
-            <button id="closeMenu">×</button>
+                <p class="subtitle">
+                    A story inspired by<br>
+                    <em>Memories that never left.</em>
+                </p>
+
+                <div class="divider"></div>
+
+                <p class="intro">
+
+                    Some people become part of our lives
+                    without ever knowing how important
+                    they were.
+
+                    <br><br>
+
+                    Some goodbyes happen before we even
+                    realize they are goodbyes.
+
+                </p>
+
+                <button
+                    id="startReading"
+                    class="primary-button"
+                >
+                    <span>▶</span>
+                    Start Reading
+                </button>
+
+                <button
+                    id="continueReading"
+                    class="secondary-button hidden"
+                >
+                    Continue Reading
+                </button>
+
+                <p class="chapter-count">
+                    15 Chapters
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         READER
+    ========================== -->
+
+    <main id="reader" class="reader hidden">
+
+        <div class="reader-wrapper">
+
+            <!-- Chapter information -->
+
+            <div class="chapter-top">
+
+                <div>
+
+                    <p
+                        id="chapterNumber"
+                        class="chapter-number"
+                    >
+                        CHAPTER 01
+                    </p>
+
+                    <h2 id="chapterTitle">
+                        BEFORE EVERYTHING CHANGED
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Chapter image -->
+
+            <div
+                id="chapterImageContainer"
+                class="chapter-image-container"
+            >
+
+                <img
+                    id="chapterImage"
+                    src=""
+                    alt=""
+                    class="chapter-image"
+                >
+
+            </div>
+
+
+            <!-- Story -->
+
+            <article
+                id="storyContent"
+                class="story-content"
+            >
+            </article>
+
+
+            <!-- Chapter navigation -->
+
+            <div class="chapter-navigation">
+
+                <button
+                    id="previousButton"
+                    class="nav-button"
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    id="chapterListButton"
+                    class="chapter-list-button"
+                >
+                    Chapters
+                </button>
+
+                <button
+                    id="nextButton"
+                    class="nav-button next"
+                >
+                    Next →
+                </button>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="reader-progress">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+            <p
+                id="progressText"
+                class="progress-text"
+            >
+                Chapter 1 of 15
+            </p>
+
         </div>
 
-        <div id="chapterList"></div>
+    </main>
+
+
+    <!-- =========================
+         CHAPTER SIDEBAR
+    ========================== -->
+
+    <aside
+        id="chapterSidebar"
+        class="chapter-sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <div>
+
+                <p class="sidebar-label">
+                    THE STORY
+                </p>
+
+                <h3>
+                    Chapters
+                </h3>
+
+            </div>
+
+            <button
+                id="closeSidebar"
+                class="close-button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="chapterList"
+            class="chapter-list"
+        >
+        </div>
 
     </aside>
 
 
-    <!-- READER AREA -->
+    <!-- Overlay -->
 
-    <section class="reader-area">
+    <div
+        id="overlay"
+        class="overlay"
+    ></div>
 
-        <button id="openMenu" class="contents-button">
-            ☰ Contents
-        </button>
 
+    <!-- =========================
+         READING SETTINGS
+    ========================== -->
 
-        <div id="bookViewport" class="book-viewport">
+    <div
+        id="settingsPanel"
+        class="settings-panel"
+    >
 
-            <div id="book" class="book">
+        <div class="settings-header">
 
-                <!-- Pages are generated here -->
+            <strong>
+                Reading Settings
+            </strong>
 
-            </div>
+            <button
+                id="closeSettings"
+                class="close-button"
+            >
+                ×
+            </button>
 
         </div>
 
+        <div class="setting-row">
 
-        <!-- BOTTOM NAVIGATION -->
+            <span>
+                Text Size
+            </span>
 
-        <div class="reader-navigation">
+            <div class="font-controls">
 
-            <button id="bottomPrevious">
-                ← Previous
-            </button>
+                <button id="fontDown">
+                    A-
+                </button>
 
-            <div class="reader-status">
-                <span id="chapterStatus">
-                    Chapter 01
+                <span id="fontSizeValue">
+                    100%
                 </span>
-            </div>
 
-            <button id="bottomNext">
-                Next →
-            </button>
+                <button id="fontUp">
+                    A+
+                </button>
+
+            </div>
 
         </div>
 
-    </section>
+    </div>
 
-</main>
 
-
-
-<!-- =====================================================
-     STORY DATA
-===================================================== -->
-
-<div id="storyData" hidden>
-
-
-    <!-- CHAPTER 01 -->
-
-    <article
-        class="chapter"
-        data-chapter="01"
-        data-title="Before Everything Changed"
-        data-date="2014"
-    >
-
-        <h2>BEFORE EVERYTHING CHANGED</h2>
-
-        <div class="date">2014</div>
-
-        <p>I was nine years old.</p>
-
-        <p>
-            Back then, life was simple.
-        </p>
-
-        <p>
-            I was an introvert, the kind of kid who would rather stay quiet
-            than be the center of attention. But somehow, I still managed
-            to make a few friends along the way.
-        </p>
-
-        <p>
-            I was good at my studies. I enjoyed taking part in other
-            activities too. And for the most part, I was having the kind
-            of childhood I thought would last forever.
-        </p>
-
-        <p>Then there was her.</p>
-
-        <p>
-            She was the class topper.
-        </p>
-
-        <p>
-            And somehow, every now and then, I managed to take her place
-            at the top of the class.
-        </p>
-
-        <p>
-            At first, it was nothing more than a little competition.
-        </p>
-
-        <p>
-            Then, somehow, we became friends.
-        </p>
-
-        <p>
-            We were just two children back then.
-        </p>
-
-        <p>
-            We didn't know what love was.
-        </p>
-
-        <p>
-            We didn't know how quickly people could become important to us.
-        </p>
-
-        <p>
-            We didn't know that some of the happiest days of our lives
-            can become the memories that hurt the most.
-        </p>
-
-        <p class="emphasis">
-            We were just children...
-        </p>
-
-        <p>
-            living our little days with joy.
-        </p>
-
-        <p>
-            And she was my first crush.
-        </p>
-
-        <p>
-            I just didn't know yet how important she would become to my story.
-        </p>
-
-
-        <!-- OPTIONAL IMAGE -->
-
-        <figure class="story-image">
-            <img src="ch01.jpg" alt="Chapter 01 memory">
-            <figcaption>
-                Some memories begin before we understand their meaning.
-            </figcaption>
-        </figure>
-
-    </article>
-
-
-
-    <!-- CHAPTER 02 -->
-
-    <article
-        class="chapter"
-        data-chapter="02"
-        data-title="Before You Become a Memory"
-        data-date="2014 — September"
-    >
-
-        <h2>BEFORE YOU BECOME A MEMORY</h2>
-
-        <div class="date">2014 — SEPTEMBER</div>
-
-        <p>
-            Naturally, as a child, I had to go with them.
-        </p>
-
-        <p>
-            I didn't really understand what it meant to leave.
-        </p>
-
-        <p>
-            To me, it was just another change. Another place.
-            Another school. Another beginning.
-        </p>
-
-        <p>
-            But leaving meant leaving everything behind.
-        </p>
-
-        <p>
-            My friends.
-        </p>
-
-        <p>
-            My childhood.
-        </p>
-
-        <p>
-            And her.
-        </p>
-
-        <p>
-            I never knew that day would be the last time I saw my first crush.
-        </p>
-
-        <p>
-            I never knew that our last class together would actually be our last.
-        </p>
-
-        <p>
-            I never knew that our last conversation wasn't just another conversation.
-        </p>
-
-        <p>
-            It was goodbye.
-        </p>
-
-        <blockquote>
-            “I didn't know I was looking at her for the last time.”
-        </blockquote>
-
-        <p>
-            Neither of us knew it.
-        </p>
-
-        <p>
-            There was no dramatic farewell.
-            No promise to stay in touch.
-            No moment where we looked at each other and said,
-            "This is the last time we'll meet."
-        </p>
-
-        <p>
-            We were just two children, talking like we always did.
-        </p>
-
-        <p>
-            Then I left.
-        </p>
-
-        <p class="emphasis">
-            And somehow...
-            <br>
-            I lost her.
-        </p>
-
-        <p>
-            It was the first heartbreak of my life.
-        </p>
-
-        <p>
-            I didn't even understand what heartbreak was back then.
-            I only knew that someone who had been a part of my everyday
-            life was suddenly gone.
-        </p>
-
-        <p>
-            Days passed.
-            Then weeks.
-            Then months.
-        </p>
-
-        <p>
-            And eventually, she became something I could only find
-            in my memories.
-        </p>
-
-        <p>
-            A face I could remember.
-            A voice I could barely hear anymore.
-        </p>
-
-        <p>
-            A person who had once been right there...
-            and was now somewhere I couldn't reach.
-        </p>
-
-        <p>
-            She became my first love without ever knowing it.
-        </p>
-
-        <p>
-            And more painfully...
-        </p>
-
-        <p>
-            she became my first goodbye without either of us knowing
-            it was goodbye.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 03 -->
-
-    <article
-        class="chapter"
-        data-chapter="03"
-        data-title="A New Beginning"
-        data-date="2017 — February"
-    >
-
-        <h2>A NEW BEGINNING</h2>
-
-        <div class="date">2017 — FEBRUARY</div>
-
-        <p>
-            Three years had passed since I started my new journey.
-        </p>
-
-        <p>
-            I had been admitted to a new school, and now I was in
-            9th standard—the age when most people begin experiencing
-            their first real feelings of love.
-        </p>
-
-        <p>
-            But I was still the same introverted kid.
-        </p>
-
-        <p>
-            I could barely make friends.
-        </p>
-
-        <p>
-            So I continued living my life without much company,
-            spending most of my time inside my own thoughts and imaginations.
-        </p>
-
-        <p>
-            Then, one day before my midterm examination,
-            I joined a coaching center.
-        </p>
-
-        <p>
-            It was a place where many students came to prepare for their exams.
-        </p>
-
-        <p>
-            And, somehow, on my very first day...
-        </p>
-
-        <p class="emphasis">
-            I was late.
-        </p>
-
-        <p>
-            How silly.
-        </p>
-
-        <p>
-            I finally arrived, walked into the classroom,
-            found a bench, and quietly sat down.
-        </p>
-
-        <p>
-            I opened my book.
-        </p>
-
-        <p>
-            The lecture was already going on.
-        </p>
-
-        <p>
-            So I tried to focus.
-        </p>
-
-        <p>
-            I listened to the teacher.
-            I looked at the board.
-            I tried to ignore everything around me.
-        </p>
-
-        <p class="emphasis">
-            And then...
-            <br>
-            I noticed her.
-        </p>
-
-
-        <figure class="story-image">
-            <img src="ch03.jpg" alt="The coaching center">
-            <figcaption>
-                Some beginnings arrive quietly.
-            </figcaption>
-        </figure>
-
-    </article>
-
-
-
-    <!-- CHAPTER 04 -->
-
-    <article
-        class="chapter"
-        data-chapter="04"
-        data-title="A Different Kind of Feeling"
-        data-date=""
-    >
-
-        <h2>A DIFFERENT KIND OF FEELING</h2>
-
-        <p>
-            She sat on the seat to my left.
-        </p>
-
-        <p>
-            I looked at her.
-        </p>
-
-        <p class="emphasis">
-            And for a moment, one thought crossed my mind—
-        </p>
-
-        <blockquote>
-            “How can someone be this beautiful?”
-        </blockquote>
-
-        <p>
-            I didn't say anything.
-            I didn't smile.
-            I didn't even react.
-        </p>
-
-        <p>
-            I just looked at her for a moment and turned my attention
-            back to the lecture.
-        </p>
-
-        <p>
-            But something had already changed inside me.
-        </p>
-
-        <p>
-            There was a strange feeling growing in my chest.
-        </p>
-
-        <p>
-            Something I couldn't explain.
-        </p>
-
-        <p>
-            Something I had never felt before.
-        </p>
-
-        <p>
-            I didn't know what it was.
-        </p>
-
-        <p>
-            Maybe it was admiration.
-            Maybe it was just a silly little crush.
-        </p>
-
-        <p class="emphasis">
-            Or maybe...
-            <br>
-            it was love.
-        </p>
-
-        <p>
-            I was only fifteen.
-        </p>
-
-        <p>
-            What did I know about love?
-        </p>
-
-        <p>
-            All I knew was that, from that day on,
-            the seat beside me didn't feel like just another seat anymore.
-        </p>
-
-        <blockquote>
-            “Maybe... it was love.”…?
-        </blockquote>
-
-    </article>
-
-
-
-    <!-- CHAPTER 05 -->
-
-    <article
-        class="chapter"
-        data-chapter="05"
-        data-title="Someone I Didn't Expect"
-        data-date=""
-    >
-
-        <h2>SOMEONE I DIDN'T EXPECT</h2>
-
-        <p>
-            I went back to my normal days.
-        </p>
-
-        <p>
-            I attended school.
-            I went to coaching.
-            I studied.
-            I went home.
-        </p>
-
-        <p>
-            Everything seemed normal again.
-        </p>
-
-        <p>
-            I didn't think too much about her.
-            At least, I tried not to.
-        </p>
-
-        <p>
-            Then, one day...
-        </p>
-
-        <p>
-            she spoke to me.
-        </p>
-
-        <p>
-            Somehow, she was the one who started the friendship.
-        </p>
-
-        <p>
-            I didn't expect it.
-        </p>
-
-        <p>
-            Honestly, I had never even thought about talking to her myself.
-        </p>
-
-        <p>
-            She seemed so perfect to me that I couldn't imagine why
-            someone like her would even want to talk to someone like me.
-        </p>
-
-        <p class="emphasis">
-            But somehow...
-            <br>
-            it was happening.
-        </p>
-
-        <p>
-            It was actually happening to me.
-        </p>
-
-        <p>
-            For a moment, I didn't even know what to say.
-        </p>
-
-        <p>
-            My mind went completely blank.
-        </p>
-
-        <p>
-            What was I supposed to say?
-            How was I supposed to respond?
-        </p>
-
-        <p>
-            I had imagined talking to her before...
-        </p>
-
-        <p>
-            But imagining something and actually experiencing it
-            were completely different things.
-        </p>
-
-        <p>
-            Still, she talked to me so naturally.
-            So nicely.
-            As if there was nothing unusual about it.
-        </p>
-
-        <p>
-            And slowly, that awkward silence inside me began to disappear.
-        </p>
-
-        <p>
-            I don't remember exactly what we talked about that day.
-        </p>
-
-        <p>
-            Maybe it was something completely ordinary.
-        </p>
-
-        <p>
-            Maybe it was something that neither of us would remember
-            years later.
-        </p>
-
-        <p>
-            But I remember one thing.
-        </p>
-
-        <p class="emphasis">
-            That was the day she stopped being just the girl sitting beside me...
-            <br>
-            and became someone in my life.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 06 -->
-
-    <article
-        class="chapter"
-        data-chapter="06"
-        data-title="I Thought This Time Was Different"
-        data-date=""
-    >
-
-        <h2>I THOUGHT THIS TIME WAS DIFFERENT</h2>
-
-        <p>
-            She talked to me.
-            We became friends.
-        </p>
-
-        <p>
-            Slowly, talking to her became part of my everyday life.
-        </p>
-
-        <p>
-            I started looking forward to those little conversations.
-        </p>
-
-        <p>
-            And without even realizing it, I became attached.
-        </p>
-
-        <p>
-            Maybe I thought I had finally found something I had lost years ago.
-        </p>
-
-        <p class="emphasis">
-            I thought this time would be different.
-        </p>
-
-        <p>
-            But...
-        </p>
-
-        <p class="emphasis">
-            I was wrong.
-        </p>
-
-        <p>
-            I was wrong to think that maybe she was the one.
-        </p>
-
-        <p>
-            One day, she asked me about something I knew nothing about.
-        </p>
-
-        <p>
-            Someone had spread a story about her and somehow given
-            all the credit for it to me.
-        </p>
-
-        <blockquote>
-            “Why did you say all those things about me?”
-        </blockquote>
-
-        <p>
-            I was confused.
-        </p>
-
-        <p>
-            I didn't know what she was talking about.
-        </p>
-
-        <p>
-            I tried to explain.
-            I tried to convince her that I hadn't said anything.
-        </p>
-
-        <p>
-            But she wouldn't listen.
-        </p>
-
-        <p>
-            Not even once.
-        </p>
-
-        <p>
-            No matter how much I tried to explain myself,
-            she had already made up her mind.
-        </p>
-
-        <p>
-            Then she said something I never expected to hear.
-        </p>
-
-        <blockquote>
-            “Don't talk to me anymore.”
-        </blockquote>
-
-        <p class="emphasis">
-            And just like that...
-            <br>
-            the friendship we had built disappeared.
-        </p>
-
-        <p>
-            She told me to forget everything.
-            Forget our conversations.
-            Forget our friendship.
-            Forget her.
-        </p>
-
-        <p>
-            All because of something I never even said.
-        </p>
-
-        <p>
-            I didn't know what to do.
-        </p>
-
-        <p>
-            How could I prove something I hadn't done?
-        </p>
-
-        <p>
-            How could I make someone believe me when they had
-            already decided not to?
-        </p>
-
-        <p>
-            That day, I learned something I was too young to understand before.
-        </p>
-
-        <p>
-            Sometimes, you don't lose someone because you did something wrong.
-        </p>
-
-        <p class="emphasis">
-            Sometimes...
-            <br>
-            you lose them because of something they believed was true.
-        </p>
-
-        <p>
-            And the most painful part wasn't losing her.
-        </p>
-
-        <p>
-            It was knowing that I never even got the chance to make things right.
-        </p>
-
-        <p>
-            A misunderstanding had taken someone away from me.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 07 -->
-
-    <article
-        class="chapter"
-        data-chapter="07"
-        data-title="The Truth Came Too Late"
-        data-date=""
-    >
-
-        <h2>THE TRUTH CAME TOO LATE</h2>
-
-        <p>
-            After that day, the days passed.
-        </p>
-
-        <p>
-            And somehow...
-        </p>
-
-        <p class="emphasis">
-            one whole year went by.
-        </p>
-
-        <p>
-            Even though we were still in the same section,
-            she didn't talk to me.
-        </p>
-
-        <p>
-            She ignored me.
-        </p>
-
-        <p>
-            And I slowly got used to it.
-        </p>
-
-        <p>
-            During that one year, I started losing faith in myself.
-        </p>
-
-        <p>
-            Maybe I wasn't capable of making a good friend.
-        </p>
-
-        <p>
-            Maybe I wasn't meant to have someone who would truly understand me.
-        </p>
-
-        <p>
-            Maybe love just wasn't something meant for me.
-        </p>
-
-        <p>
-            I still didn't have any real friends.
-        </p>
-
-        <p>
-            But I was still me.
-        </p>
-
-        <p class="emphasis">
-            Quiet.
-            <br>
-            Introverted.
-            <br>
-            Lost inside my own thoughts.
-        </p>
-
-        <p>
-            Then came the last day of our 10th-grade exams.
-        </p>
-
-        <p>
-            I never expected anything unusual to happen that day.
-        </p>
-
-        <p class="emphasis">
-            But suddenly...
-            <br>
-            she came to me.
-        </p>
-
-        <p>
-            After an entire year of silence, she finally spoke to me.
-        </p>
-
-        <p>
-            She apologized.
-        </p>
-
-        <p>
-            She told me about the misunderstanding.
-        </p>
-
-        <p>
-            She finally realized that I had been telling the truth.
-        </p>
-
-        <p>
-            For a moment, I didn't know what to feel.
-        </p>
-
-        <p>
-            I had waited so long for that moment.
-        </p>
-
-        <p>
-            Maybe a part of me had always wanted to hear those words from her.
-        </p>
-
-        <p class="emphasis">
-            But then...
-            <br>
-            it was too late.
-        </p>
-
-        <p>
-            Because the very next day, I had to leave.
-        </p>
-
-        <p>
-            I was moving to another city for college admission.
-        </p>
-
-        <p>
-            One day.
-        </p>
-
-        <p>
-            That's all the time we had.
-        </p>
-
-        <p>
-            After a whole year of silence...
-            we finally talked again.
-        </p>
-
-        <p>
-            And just when things could have been different...
-            I had to leave.
-        </p>
-
-        <p>
-            Maybe life has a strange sense of timing.
-        </p>
-
-        <p>
-            It gave me the apology I had been waiting for...
-            one day before taking me somewhere else.
-        </p>
-
-        <p>
-            And just like that,
-            I left.
-        </p>
-
-        <p>
-            No anger.
-            No hatred.
-            No proper goodbye.
-        </p>
-
-        <p class="emphasis">
-            Just a feeling that maybe...
-            <br>
-            we had met at the wrong time.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 08 -->
-
-    <article
-        class="chapter"
-        data-chapter="08"
-        data-title="Another New Beginning, Before It All Began"
-        data-date="June 25, 2020"
-    >
-
-        <h2>ANOTHER NEW BEGINNING,<br>BEFORE IT ALL BEGAN</h2>
-
-        <div class="date">JUNE 25, 2020</div>
-
-        <p>
-            I had just finished my SSC.
-        </p>
-
-        <p>
-            It was the time when everyone had to say goodbye
-            to their friends, their best friends, and the people
-            they had spent so many years with.
-        </p>
-
-        <p>
-            After that, I moved back to my hometown.
-        </p>
-
-        <p>
-            Time passed.
-        </p>
-
-        <p>
-            Eventually, the day came when my SSC results were published.
-        </p>
-
-        <p>
-            There weren't many colleges in my hometown that I considered
-            suitable for me.
-        </p>
-
-        <p>
-            I felt disappointed, but instead of giving up,
-            I made a decision.
-        </p>
-
-        <p>
-            I would try to transfer to another college.
-        </p>
-
-        <p>
-            Eventually, I got admitted to one that was relatively close to my home.
-        </p>
-
-        <p>
-            At that time, I thought I was simply choosing a new place
-            to continue my education.
-        </p>
-
-        <p class="emphasis">
-            I didn't know I was about to enter a chapter of my life
-            that I would remember for a very different reason.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 09 -->
-
-    <article
-        class="chapter"
-        data-chapter="09"
-        data-title="A New Beginning"
-        data-date="October 11, 2020"
-    >
-
-        <h2>A NEW BEGINNING</h2>
-
-        <div class="date">OCTOBER 11, 2020</div>
-
-        <p>
-            It was the day our opening class began.
-        </p>
-
-        <p>
-            Since I had transferred from another city,
-            I decided not to make any friends.
-        </p>
-
-        <p>
-            I thought it would be easier that way.
-        </p>
-
-        <p>
-            If I didn't become attached to anyone,
-            I wouldn't have to regret leaving them later.
-        </p>
-
-        <p>
-            So I started going to college alone.
-        </p>
-
-        <p>
-            The college itself was simple.
-            There wasn't much open space,
-            and it was located beside the Dhaka-Sylhet Highway.
-        </p>
-
-        <p>
-            There wasn't anything particularly special about the place.
-        </p>
-
-        <p>
-            Anyone could get admission, and because of that,
-            I didn't feel like my SSC result meant much there.
-        </p>
-
-        <p>
-            Most of the students already knew each other.
-        </p>
-
-        <p>
-            They had graduated from the same schools
-            and had joined the college together.
-        </p>
-
-        <p>
-            They came in groups.
-            They laughed together.
-            They talked together.
-        </p>
-
-        <p class="emphasis">
-            And I...
-            <br>
-            I stood alone.
-        </p>
-
-        <p>
-            The opening ceremony started at 10:00 AM.
-        </p>
-
-        <p>
-            I found an empty bench and sat there by myself.
-        </p>
-
-        <p>
-            The ceremony continued for about an hour and twenty minutes.
-        </p>
-
-        <p>
-            Then it ended.
-        </p>
-
-        <p>
-            I simply returned home.
-        </p>
-
-        <p>
-            It was the beginning of my college life.
-        </p>
-
-        <p class="emphasis">
-            But somehow...
-            <br>
-            I already felt like I didn't belong there.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 10 -->
-
-    <article
-        class="chapter"
-        data-chapter="10"
-        data-title="The Empty Bench"
-        data-date=""
-    >
-
-        <h2>THE EMPTY BENCH</h2>
-
-        <p>
-            The next day, our classes started at 10:00 AM
-            and ended at 1:40 PM.
-        </p>
-
-        <p>
-            I arrived at college at around 9:45 AM.
-        </p>
-
-        <p>
-            Most of the students had already arrived.
-        </p>
-
-        <p>
-            I looked around and noticed that the front bench was empty.
-        </p>
-
-        <p>
-            So I took that seat.
-        </p>
-
-        <p>
-            Around me, everyone was talking.
-        </p>
-
-        <p>
-            They were introducing themselves,
-            making new friends, laughing and enjoying their first days together.
-        </p>
-
-        <p class="emphasis">
-            I just sat there quietly.
-        </p>
-
-        <p>
-            At 10:00 AM, the teacher arrived.
-        </p>
-
-        <p>
-            He asked us our names and about our previous education.
-        </p>
-
-        <p>
-            Everyone answered with excitement.
-        </p>
-
-        <p>
-            For most of them, the first day felt special.
-        </p>
-
-        <p class="emphasis">
-            For me...
-            <br>
-            it didn't.
-        </p>
-
-        <p>
-            One period ended.
-            Then another.
-            Then another.
-        </p>
-
-        <p>
-            And eventually, the day was over.
-        </p>
-
-        <p>
-            Everyone went home with the new friends they had made.
-        </p>
-
-        <p>
-            I went home alone.
-        </p>
-
-        <p class="emphasis">
-            And the next day...
-            <br>
-            I came back to the same empty bench.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 11 -->
-
-    <article
-        class="chapter"
-        data-chapter="11"
-        data-title="When Everything Changed"
-        data-date=""
-    >
-
-        <h2>WHEN EVERYTHING CHANGED</h2>
-
-        <p>
-            After a few months, my half-yearly examinations
-            started getting closer.
-        </p>
-
-        <p>
-            That's when I realized something.
-        </p>
-
-        <p class="emphasis">
-            I needed tuition.
-        </p>
-
-        <p>
-            Otherwise, I wouldn't be able to perform well in the exams.
-        </p>
-
-        <p>
-            So I talked to one of my teachers.
-        </p>
-
-        <p>
-            He agreed to teach me, but he gave me one condition.
-        </p>
-
-        <blockquote>
-            “If there aren't enough students, I won't be able to continue the tuition.”
-        </blockquote>
-
-        <p>
-            I agreed.
-        </p>
-
-        <p>
-            I didn't really have another option.
-        </p>
-
-        <p>
-            The first three days passed.
-        </p>
-
-        <p class="emphasis">
-            I was the only student there.
-        </p>
-
-        <p>
-            Then, on the fourth day, Sir was trying to contact another student.
-        </p>
-
-        <p>
-            He looked at me and said,
-        </p>
-
-        <blockquote>
-            “You're lucky. I found another student.”
-        </blockquote>
-
-        <p>
-            I felt happy inside.
-        </p>
-
-        <p>
-            At least now, I could continue my studies.
-        </p>
-
-        <p>
-            After a few moments, the phone rang again.
-        </p>
-
-        <p>
-            Sir answered the call, gave the person directions,
-            and then said,
-        </p>
-
-        <blockquote>
-            “I'm coming to receive you.”
-        </blockquote>
-
-        <p>
-            I didn't pay much attention.
-        </p>
-
-        <p>
-            I didn't even wonder whether the new student was a boy or a girl.
-        </p>
-
-        <p>
-            I didn't know their name.
-        </p>
-
-        <p>
-            Honestly, I didn't care.
-        </p>
-
-        <p>
-            About ten minutes later, the new student arrived.
-        </p>
-
-        <p>
-            There was no proper introduction.
-        </p>
-
-        <p>
-            But I noticed one thing immediately.
-        </p>
-
-        <p class="emphasis">
-            The new student was a girl.
-        </p>
-
-        <p>
-            She was from the Arts group,
-            and she seemed to be quite introverted.
-        </p>
-
-        <p>
-            At that moment, she was just another student.
-        </p>
-
-        <p class="emphasis">
-            I had no idea how important she would become.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 12 -->
-
-    <article
-        class="chapter"
-        data-chapter="12"
-        data-title="Before We Became Friends"
-        data-date=""
-    >
-
-        <h2>BEFORE WE BECAME FRIENDS</h2>
-
-        <p>
-            A few days passed.
-        </p>
-
-        <p>
-            One morning, our tuition was supposed to start at 7:30 AM.
-        </p>
-
-        <p>
-            But Sir was already thirty minutes late.
-        </p>
-
-        <p>
-            I thought it was just another ordinary day.
-        </p>
-
-        <p class="emphasis">
-            I was wrong.
-        </p>
-
-        <p>
-            She and I were sitting in the room,
-            going through our previous lessons.
-        </p>
-
-        <p>
-            Then she asked me something.
-        </p>
-
-        <p>
-            She had a math problem that she couldn't understand.
-        </p>
-
-        <p>
-            She asked me to solve it for her.
-        </p>
-
-        <p>
-            That was the first time she really talked to me.
-        </p>
-
-        <p>
-            I solved the problem and asked her if she had any other difficulties.
-        </p>
-
-        <p>
-            She said no.
-        </p>
-
-        <p>
-            That could have been the end of it.
-        </p>
-
-        <p>
-            But after that day, she started asking me about other
-            problems she couldn't solve.
-        </p>
-
-        <p>
-            She was very introverted,
-            so I was surprised that she was comfortable talking to me.
-        </p>
-
-        <p>
-            But she only talked to me during tuition.
-        </p>
-
-        <p>
-            I didn't take it seriously.
-        </p>
-
-        <p>
-            I thought it was simply because we were the only two students there.
-        </p>
-
-        <p>
-            Time passed.
-        </p>
-
-        <p>
-            A month went by since we started tuition together.
-        </p>
-
-        <p>
-            Somehow, she became more comfortable around me.
-        </p>
-
-        <p>
-            She started talking to me freely.
-        </p>
-
-        <p>
-            I didn't know how it happened.
-        </p>
-
-        <p>
-            But it did.
-        </p>
-
-        <p class="emphasis">
-            And without realizing it...
-            <br>
-            we were slowly becoming friends.
-        </p>
-
-
-        <figure class="story-image">
-            <img src="images/ch12.jpg" alt="Before we became friends">
-            <figcaption>
-                Sometimes friendship begins with something as simple as a question.
-            </figcaption>
-        </figure>
-
-    </article>
-
-
-
-    <!-- CHAPTER 13 -->
-
-    <article
-        class="chapter"
-        data-chapter="13"
-        data-title="I Wish I Had Said Something"
-        data-date=""
-    >
-
-        <h2>I WISH I HAD SAID SOMETHING</h2>
-
-        <p>
-            One day after tuition, she said,
-        </p>
-
-        <blockquote>
-            “I have so many problems with this topic.
-            Tomorrow I'll clear all of them with you.”
-        </blockquote>
-
-        <p>
-            I simply replied,
-        </p>
-
-        <blockquote>
-            “Okay.”
-        </blockquote>
-
-        <p>
-            It felt like an ordinary conversation.
-        </p>
-
-        <p>
-            Then she reminded me,
-        </p>
-
-        <blockquote>
-            “Don't miss the next class.”
-        </blockquote>
-
-        <p>
-            I agreed.
-        </p>
-
-        <p>
-            I didn't think anything of it.
-        </p>
-
-        <p>
-            Her home was on the way to mine,
-            so we usually walked together for part of the journey.
-        </p>
-
-        <p>
-            That day was no different.
-        </p>
-
-        <p>
-            We walked together until she reached her home.
-        </p>
-
-        <p>
-            Before going inside, she turned toward me and said goodbye.
-        </p>
-
-        <p>
-            I was quiet.
-        </p>
-
-        <p>
-            I didn't say much.
-        </p>
-
-        <p class="emphasis">
-            I thought I had more time.
-        </p>
-
-        <p>
-            I thought there would always be another day.
-        </p>
-
-        <p>
-            Another class.
-        </p>
-
-        <p>
-            Another conversation.
-        </p>
-
-        <p>
-            Another chance to say something.
-        </p>
-
-        <p class="emphasis">
-            I never imagined that such a simple goodbye...
-            <br>
-            would be our last conversation.
-        </p>
-
-    </article>
-
-
-
-    <!-- CHAPTER 14 -->
-
-    <article
-        class="chapter"
-        data-chapter="14"
-        data-title="I Never Went Back"
-        data-date=""
-    >
-
-        <h2>I NEVER WENT BACK</h2>
-
-        <p>
-            When I arrived home, I heard the news.
-        </p>
-
-        <p>
-            I had been admitted to another college.
-        </p>
-
-        <p>
-            The next day was my joining day.
-        </p>
-
-        <p>
-            I was happy.
-        </p>
-
-        <p>
-            My dream had finally come true.
-        </p>
-
-        <p>
-            So I started my new college life.
-        </p>
-
-        <p>
-            But I never told anyone the real reason
-            behind my sudden absence.
-        </p>
-
-        <p>
-            My teachers called me.
-        </p>
-
-        <p>
-            I didn't answer.
-        </p>
-
-        <p>
-            I didn't know what I was supposed to tell them.
-        </p>
-
-        <p>
-            I didn't even go back to explain why I had disappeared.
-        </p>
-
-        <p>
-            A couple of weeks passed.
-        </p>
-
-        <p>
-            Then one day, I remembered her words.
-        </p>
-
-        <blockquote>
-            “I have so many problems with this topic.
-            Tomorrow I'll clear all of them with you.”
-        </blockquote>
-
-        <p>
-            And then...
-        </p>
-
-        <blockquote>
-            “Don't miss the next class.”
-        </blockquote>
-
-        <p>
-            But I missed it.
-        </p>
-
-        <p>
-            I missed that class.
-        </p>
-
-        <p>
-            I missed that conversation.
-        </p>
-
-        <p class="emphasis">
-            And I missed my chance.
-            <br>
-            Forever.
-        </p>
-
-        <p>
-            There was no next morning.
-        </p>
-
-        <p>
-            No next class.
-        </p>
-
-        <p>
-            No chance to walk home together again.
-        </p>
-
-        <p>
-            No chance to hear what she wanted to say.
-        </p>
-
-        <p>
-            I had left without realizing that I was leaving behind
-            something I would never be able to return to.
-        </p>
-
-        <p>
-            Maybe that was the cruelest part.
-        </p>
-
-        <p class="emphasis">
-            I didn't know it was goodbye...
-            <br>
-            until there was no way to say hello again.
-        </p>
-
-        <p class="final-line">
-            I never went back.
-        </p>
-
-
-        <figure class="story-image">
-            <img src="images/ch14.jpg" alt="A final memory">
-            <figcaption>
-                Some doors close before we realize we were standing in front of them.
-            </figcaption>
-        </figure>
-
-    </article>
-
-
-
-    <!-- CHAPTER 15 -->
-
-    <article
-        class="chapter"
-        data-chapter="15"
-        data-title="The End?"
-        data-date=""
-    >
-
-        <h2>THE END?</h2>
-
-        <p>
-            Years passed, but sometimes I still remembered that morning.
-        </p>
-
-        <p>
-            Her voice.
-        </p>
-
-        <p>
-            Her smile.
-        </p>
-
-        <p>
-            And those simple words—
-        </p>
-
-        <blockquote>
-            “Don't miss the next class.”
-        </blockquote>
-
-        <p>
-            I did miss it.
-        </p>
-
-        <p>
-            And I never got another chance.
-        </p>
-
-        <p>
-            Maybe some people are only meant to stay
-            for a short part of our story.
-        </p>
-
-        <p>
-            Maybe that's okay.
-        </p>
-
-        <p>
-            I can't change what happened.
-        </p>
-
-        <p>
-            I can only remember it.
-        </p>
-
-        <p>
-            And this time, instead of looking back...
-        </p>
-
-        <p class="emphasis">
-            I chose to move forward.
-        </p>
-
-        <p class="final-line">
-            The End.
-        </p>
-
-
-        <figure class="story-image final-image">
-            <img src="images/final.jpg" alt="The final memory">
-            <figcaption>
-                Some stories end. Some memories don't.
-            </figcaption>
-        </figure>
-
-    </article>
-
-</div>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
